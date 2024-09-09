@@ -5,7 +5,9 @@
   "main": "index.js",
   "scripts": {
     "api-service": "nodemon index.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "db:migrate": "npx sequelize-cli db:migrate --config config/config.js",
+    "db:seed": "npx sequelize-cli db:seed:all --config config/config.js"
   },
   "keywords": [],
   "author": "",
@@ -19,5 +21,8 @@
     "mysql2": "^3.11.0",
     "nodemon": "^3.1.4",
     "sequelize": "^6.37.3"
+  },
+  "devDependencies": {
+    "sequelize-cli": "^6.6.2"
   }
 }

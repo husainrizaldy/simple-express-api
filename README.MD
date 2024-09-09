@@ -9,6 +9,7 @@
 - `mysql2`
 - `nodemon`
 - `sequelize`
+- `sequelize-cli`
 
 ## Instalasi
 
@@ -26,25 +27,22 @@
 
 Create a .env file in the root of your project and add the following :
    ```
-    DB_HOST=localhost
-    DB_USER=root
-    DB_PASSWORD=yourPassword
-    DB_NAME=yourDbName
+   DB_HOST=localhost
+   DB_USER=root
+   DB_PASSWORD=yourPassword
+   DB_NAME=yourDbName
+   DB_PORT=3306
+   DB_DIALECT='mysql'
    ```
+You can use `.env.example` as a reference for the required environment variables.
 
-**Database**
+**Run migrations and seeders**
 
-create a database and tables with the following details :
+Ensure that you have created a database in your MySQL server.
+
 ```
-`id` int NOT NULL AUTO_INCREMENT,
-`nim` int DEFAULT NULL,
-`nama_lengkap` varchar(100) DEFAULT NULL,
-`kelas` varchar(20) DEFAULT NULL,
-`alamat` text,
-`created_at` datetime DEFAULT CURRENT_TIMESTAMP,
-`updated_at` datetime DEFAULT NULL ON UPDATE CURRENT_TIMESTAMP,
-PRIMARY KEY (`id`),
-UNIQUE KEY `nim_UNIQUE` (`nim`)
+npm run db:migrate
+npm run db:seed
 ```
 
 **Run the application**
